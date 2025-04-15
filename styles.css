@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url("assets/background.png") no-repeat center center fixed;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #start-page {
+    max-width: 900px;
+    width: 95%;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+#start-page h1{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.app{
+    width: 100%;
+    max-width: 800px;
+    min-height: 100vh;
+    margin: 5vh auto; 
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+.app h1{
+    font-size: 3.2rem;
+    font-weight: 25px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 30px;
+    color: antiquewhite;
+    text-align: center;
+}
+
+.game-details-container{
+    width: 80%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.game-details-container h1{
+    font-size: 1.2rem;
+}
+
+h2{
+    font-size: 2.2rem;
+    color: aliceblue;  
+}
+.quiz{
+    padding: 20px 0;
+    width: 90%;
+    max-width: 900px;
+    height: auto;
+    background-color: plum;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 30px;
+}
+.btn{
+    background: #fff;
+    color: #222;
+    font-weight: 500;
+    width: 100%;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: left;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+}
+.btn:hover:not([disabled]){
+    background: black ;
+    color: whitesmoke;
+}
+.btn:disabled{
+    cursor: no-drop;
+}
+
+#next-btn{
+    background: rgb(99, 99, 138);
+    color:wheat;
+    font-weight: 500;
+    width: 150px;
+    border: 0;
+    padding: 10px;
+    margin: 20px  auto 10; 
+    border-radius: 5px;
+    cursor: pointer;
+    align-items: center;
+    display: none;
+}
+.correct{
+    background: rgb(94, 145, 94);
+}
+.incorrect{
+    background: rgb(215, 117, 117);
+}
