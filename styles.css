@@ -96,7 +96,7 @@ h2{
     border-radius: 30px;
 }
 .btn{
-    background: #fff;
+    background: white;
     color: #222;
     font-weight: 500;
     width: 100%;
@@ -124,7 +124,7 @@ h2{
     width: 150px;
     border: 0;
     padding: 10px;
-    margin: 20px  auto 10; 
+    margin: 20px  auto 10px; 
     border-radius: 5px;
     cursor: pointer;
     align-items: center;
@@ -136,3 +136,30 @@ h2{
 .incorrect{
     background: rgb(215, 117, 117);
 }
+#result-page {
+    color: white; 
+    text-align: center;
+  }
+  
+  #result-page h1,
+  #result-page h2 {
+    color: white; 
+  }
+  #result-page p {
+    font-style: italic;
+    font-weight: bold;
+    color: rgb(255, 255, 255)
+  }
+  
+  #restart-btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    margin-top: 20px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  

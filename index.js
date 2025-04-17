@@ -39,7 +39,7 @@
     fetchQuestion();
   });
 
-  const QUIZ_URL = "https://opentdb.com/api.php?amount=1&category=9&difficulty=easy&type=multiple";
+  const QUIZ_URL = "https://opentdb.com/api.php?amount=5&category=9&difficulty=easy&type=multiple";
 
   function fetchQuestion() {
     if (questionCounter >= TOTAL_QUESTIONS) {
@@ -51,6 +51,10 @@
     fetch(QUIZ_URL)
       .then(response => response.json())
       .then(data => {
+        if (!data.results || data.results.length === 0) {
+            throw new Error("No questions returned from API.");
+          }        
+        // console.log(data.results)
         const quiz = data.results[0];
         currentQuestion = quiz;
         correctAnswer = quiz.correct_answer;
@@ -69,6 +73,9 @@
           btn.addEventListener("click", () => selectAnswer(btn, answer));
           answerButtonsElement.appendChild(btn);
         });
+
+nextButton.textContent = (questionCounter === TOTAL_QUESTIONS - 1) ? "Finish Quiz" : "Next Question";
+
         questionCounter++;
         questionNumber.innerText = questionCounter;
         playerScore.innerText = score;
@@ -94,10 +101,12 @@
     }
  
     playerScore.innerText = score;
-    questionCounter++;
-    questionNumber.innerText = questionCounter;
 
     nextButton.style.display = "block";
+  }
+
+  function shuffle(array) {
+    return array.sort(() => Math.random() - 0.5);
   }
 
   function disableAnswers() {
@@ -115,9 +124,23 @@
     quizApp.style.display = "none";
     resultPage.style.display = "block";
     finalScore.innerText = score;
-  }
 
-  function shuffle(array) {
-    return array.sort(() => Math.random() - 0.5);
-  }
+  const message = document.getElementById("score-message");
 
+  if (score <= 2) {
+    message.innerText = "Better luck next time 😓";
+  } else if (score === 3 || score === 4) {
+    message.innerText = "Nice try! 👍";
+  } else if (score === 5) {
+    message.innerText = "You Rock! 🎉";
+    triggerCelebration();
+  }
+  }
+  function triggerCelebration() {
+    confetti({
+      particleCount: 200,
+      spread: 100,
+      origin: { y: 0.6 }
+    });
+  }
+  
